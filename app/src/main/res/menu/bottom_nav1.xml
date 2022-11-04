@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/map"
+        android:title="@string/map"
+        android:icon="@drawable/ic_action_map"/>
+    <item android:id="@+id/stations"
+        android:title="@string/stations"
+        android:icon="@drawable/ic_action_addchart"/>
+    <item android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_action_settings"/>
+</menu>

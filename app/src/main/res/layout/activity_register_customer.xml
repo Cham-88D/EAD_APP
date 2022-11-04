@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterCustomer">
+
+
+    <FrameLayout
+        android:id="@+id/frame2"
+        android:layout_width="411dp"
+        android:layout_height="263dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation1" />
+
+    </FrameLayout>
+
+
+    <EditText
+        android:id="@+id/RegEmail"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:autofillHints="Email"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_email"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame2"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/RegNIC"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="NIC"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_person"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/nic"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#040404"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegEmail"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/RegPass"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:autofillHints="password"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#151515"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegNIC"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/RegPassChk"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="55dp"
+        android:autofillHints="password re-enter"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_lock"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/renter_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegPass"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/RegBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/round_bg2"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/create_account"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegPassChk" />
+
+    <TextView
+        android:id="@+id/logURLD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/already_have_an_account"
+        android:textColor="#040404"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

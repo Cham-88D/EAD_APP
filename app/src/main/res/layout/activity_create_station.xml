@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateStationActivity">
+
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="411dp"
+        android:layout_height="263dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation1" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/StName"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="56dp"
+        android:autofillHints="Station Name"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_person"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/station_name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame1"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/StLocation"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:autofillHints="location"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/station_location_city"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StName"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/createStBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/round_bg2"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/create_station"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StLocation" />
+
+    <Button
+        android:id="@+id/backHomeBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/round_bg"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/home"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createStBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <FrameLayout
+        android:id="@+id/frame6"
+        android:layout_width="411dp"
+        android:layout_height="263dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation1" />
+
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/buttonDel"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/round_bg"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/delete_account"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame6" />
+
+    <Button
+        android:id="@+id/buttonPass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/round_bg2"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/change_password"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDel" />
+
+    <Button
+        android:id="@+id/buttonOut"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/round_bg3"
+        android:elevation="2dp"
+        android:fontFamily="@font/poppins_medium"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="@string/log_out"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPass"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
