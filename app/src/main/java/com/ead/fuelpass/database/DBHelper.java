@@ -166,8 +166,7 @@ public class DBHelper extends SQLiteOpenHelper {
             public void insertQueue(QueueData d) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-            UUID uuid= UUID.randomUUID();
-            contentValues.put(Constants.QUEUE_ID, String.valueOf(uuid));
+            contentValues.put(Constants.QUEUE_ID, d.getQ_id());
             contentValues.put(Constants.TANK_ID, d.getTank_id());
             contentValues.put(Constants.STATION_ID,d.getStaion_id());
             contentValues.put("type", d.getType());
@@ -189,12 +188,15 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<QueueData> data = new ArrayList<>();
         if (res.moveToFirst()) {
             do {
+                String q_id = res.getString(res.getColumnIndex("queue_id"));
                 String tank_id = res.getString(res.getColumnIndex("tank_id"));
+                String station_id = res.getString(res.getColumnIndex("station_id"));
                 String status = res.getString(res.getColumnIndex("status"));
+                String status2 = res.getString(res.getColumnIndex("status2"));
                 String type = res.getString(res.getColumnIndex("type"));
                 int count = res.getInt(res.getColumnIndex("count"));
                 String  time = res.getString(res.getColumnIndex("time"));
-                QueueData q = new QueueData(tank_id,"",status,type,time,count);
+                QueueData q = new QueueData(q_id,tank_id,station_id,status,status2,type,time,count);
                 data.add(q);
             } while (res.moveToNext());
         }
@@ -207,7 +209,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //delete queue data
     public void  deleteQueue() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("delete from "+ Constants.QUEUE_TABLE_NAME);
+        db.execSQL("delete  from "+ Constants.QUEUE_TABLE_NAME);
     }
 
 }

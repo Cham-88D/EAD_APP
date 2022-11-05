@@ -34,6 +34,7 @@ public class Constants {
             TANK_ID + " TEXT," +
             STATION_ID + " TEXT," +
             "status" + " TEXT," +
+            "status2" + " TEXT," +
             "type" + " TEXT," +
             "time" + " TEXT ," +
             "count" + " INT ," +

@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.ead.fuelpass.adapters.AdapterQueue;
 import com.ead.fuelpass.database.DBHelper;
+import com.ead.fuelpass.model.StationData;
 import com.ead.fuelpass.nav.Navigation;
 import com.ead.fuelpass.remote.QueueService;
 import com.ead.fuelpass.remote.RetrofitClient;
@@ -49,8 +50,6 @@ public class DashBoardCustomer extends AppCompatActivity {
        recyclerView.setAdapter(myAdapter);
 
     }
-
-
 
 }
 

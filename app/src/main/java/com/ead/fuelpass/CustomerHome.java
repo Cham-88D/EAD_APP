@@ -24,24 +24,20 @@ public class CustomerHome extends AppCompatActivity {
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container,mapFragment).commit();
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.map:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,mapFragment).commit();
-                        return true;
-                    case R.id.stations:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,stationListFragment).commit();
-                        return true;
-                    case R.id.settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,settingsFragment).commit();
-                        return true;
-                }
-
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.map:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,mapFragment).commit();
+                    return true;
+                case R.id.stations:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,stationListFragment).commit();
+                    return true;
+                case R.id.settings:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,settingsFragment).commit();
+                    return true;
             }
+
+            return false;
         });
 
 

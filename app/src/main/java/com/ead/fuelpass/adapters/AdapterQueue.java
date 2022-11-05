@@ -75,23 +75,25 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
             holder.btn.setText("Can't join");
             holder.btn2.setVisibility(View.INVISIBLE);
         }
-        if(!mydb.getTankId().equals(""))
+        String va = mydb.getTankId();
+        if(!va.equals(""))
         {
             holder.btn.setEnabled(false);
-            holder.btn.setText("Joined");
+            holder.btn.setText("Can't join");
             holder.btn2.setVisibility(View.INVISIBLE);
-        }
+            if(va.equals(queryList.get(position).getTank_id()))
+            {
+                holder.btn2.setVisibility(View.VISIBLE);
+                holder.btn.setVisibility(View.GONE);
+                holder.btn2.setText("leave");
+            }
 
-        if(queryList.get(position).getTank_id().equals(mydb.getTankId()))
-        {
-            holder.btn2.setVisibility(View.VISIBLE);
-            holder.btn.setVisibility(View.INVISIBLE);
-            holder.btn2.setText("leave");
+
         }
 
 
         holder.btn.setOnClickListener(v->update(queryList.get(position)));
-        //holder.btn2.setOnClickListener(v->remove(queryList.get(position)));
+        holder.btn2.setOnClickListener(v->remove(queryList.get(position)));
     }
 
     @Override
@@ -120,11 +122,10 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
 
 
 
-    //get queue data
+    //add to queue data
    public void update(QueueData t) {
-        if(t.getCount()==0)
-        {
-            Queue q = new Queue(t.getTank_id(),mydb.getId(),t.getStatus());
+
+            Queue q = new Queue("",t.getTank_id(),mydb.getId(),"joined");
             Call<Queue2> call = service.joinQueue(q);
             call.enqueue(new Callback<Queue2>() {
 
@@ -142,32 +143,44 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
                 }
 
             });
-        }
+
+    }
 
 
-       if(t.getCount()!=0)
-       {
-           Queue q = new Queue(t.getTank_id(),mydb.getId(),t.getStatus());
-           Call<Queue2> call = service.updateQueue(q);
-           call.enqueue(new Callback<Queue2>() {
+    //remove from  queue data
+    public void remove(QueueData t) {
 
-               @Override
-               public void onResponse(Call<Queue2> call, Response<Queue2> response) {
-                   Intent myIntent =   nav.homeCustomer();
-                   myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                   context.startActivity(myIntent);
-               }
 
-               @Override
-               public void onFailure(Call<Queue2> call, Throwable t) {
-                   Toasts.error(context, "error!");
-               }
+            Queue q = new Queue(t.getQ_id(),t.getTank_id(),mydb.getId(),"left");
+            Call<Queue2> call = service.updateQueue(q);
+            call.enqueue(new Callback<Queue2>() {
 
-           });
-       }
+                @Override
+                public void onResponse(Call<Queue2> call, Response<Queue2> response) {
+                    mydb.deleteTank(mydb.getTankId());
+                    Intent myIntent =   nav.homeCustomer();
+                    myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(myIntent);
+                }
+
+                @Override
+                public void onFailure(Call<Queue2> call, Throwable t) {
+                    Toasts.error(context, "error!");
+                }
+
+            });
+
 
 
 
     }
+
+
+
+
+
+
+
+
 
 }

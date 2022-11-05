@@ -95,6 +95,7 @@
             android:shadowRadius="8"
             android:text="@string/join"
             android:textColor="#FFFFFF"
+            android:visibility="invisible"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.473"

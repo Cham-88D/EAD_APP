@@ -29,9 +29,7 @@
         android:id="@+id/StName"
         android:layout_width="300dp"
         android:layout_height="55dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="36dp"
         android:autofillHints="Station Name"
         android:background="@drawable/round_border"
         android:drawableStart="@drawable/ic_person"
@@ -46,6 +44,7 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frame1"
         tools:ignore="RtlSymmetry" />
@@ -54,9 +53,9 @@
         android:id="@+id/StLocation"
         android:layout_width="300dp"
         android:layout_height="55dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="53dp"
         android:autofillHints="location"
         android:background="@drawable/round_border"
         android:ems="10"
@@ -70,7 +69,7 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/StName"
         tools:ignore="RtlSymmetry" />
@@ -115,6 +114,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createStBtn" />
 

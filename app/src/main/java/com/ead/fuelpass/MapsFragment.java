@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ead.fuelpass.cons.Constants;
+import com.ead.fuelpass.database.DBHelper;
 import com.ead.fuelpass.toast.Toasts;
 /*
 import com.esri.arcgisruntime.ArcGISRuntimeEnvironment;
@@ -37,6 +38,8 @@ public class MapsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
        View view =inflater.inflate(R.layout.fragment_maps, container, false);
+
+
 
        /*    ArcGISRuntimeEnvironment.setApiKey(Constants.API);
         MapView mMapView = view.findViewById(R.id.mapView);
@@ -78,7 +81,8 @@ public class MapsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        DBHelper mydb = new DBHelper(getActivity());
+        mydb.deleteQueue();
     }
 
     private void getPositionGPS() {
