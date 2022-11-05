@@ -92,7 +92,6 @@ public class StationFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     AdapterStation myAdapter = new AdapterStation(data,getContext());
                     recyclerView.setAdapter(myAdapter);
-                    myAdapter.notifyDataSetChanged();
                 }
             }
 

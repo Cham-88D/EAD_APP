@@ -1,6 +1,7 @@
 package com.ead.fuelpass.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,13 +71,9 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(!mydb.getTankId().equals(""))
-        {
-            holder.itemView.getContext().startActivity(nav.cusDash(mydb.getTankId()));
-        }
         holder.nameTxt.setText(stationList.get(position).getName());
         holder.locationTxt.setText(stationList.get(position).getLocation());
-        holder.btn.setOnClickListener(v ->holder.itemView.getContext().startActivity(nav.cusDash(stationList.get(position).getShedId())));
+        holder.btn.setOnClickListener(v ->holder.itemView.getContext().startActivity(saveStation(stationList.get(position).getShedId())));
     }
 
     @Override
@@ -116,7 +113,19 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
 
                 if (response.isSuccessful() && response.body() != null) {
                     for (TankData d : response.body()) {
-                        queueData(d);
+                        //queueData(d);
+                        String status2;
+                        if (d.isStatus()) {
+                            status2 = "Available";
+
+                        } else {
+                            status2 = "Not Available";
+                        }
+                        QueueData qd = new QueueData(d.getTankId(),d.getShed().getShedId(), status2, d.getFuelType(), "", 0);
+                        mydb.insertQueue(qd);
+
+
+
                     }
 
                 }
@@ -139,7 +148,6 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
             status = "Available";
         } else {
             status = "Not Available";
-            ;
         }
         Call<QueueCount> call = serviceQ.queueCount(new Queue(d.getTankId(), mydb.getId(), status));
         call.enqueue(new Callback<QueueCount>() {
@@ -155,7 +163,6 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
 
                     } else {
                         status2 = "Not Available";
-                        ;
                     }
 
 
@@ -171,7 +178,6 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
 
                     } else {
                         status2 = "Not Available";
-                        ;
                     }
 
                     QueueData qd = new QueueData(d.getTankId(), d.getShed().getShedId(), status2, d.getFuelType(), response.body().getTime(), response.body().getCount());
@@ -186,6 +192,23 @@ public class AdapterStation extends RecyclerView.Adapter<AdapterStation.ViewHold
         });
 
 
+    }
+
+
+    //save station id to db
+    public Intent saveStation(String data)
+    {
+
+        if(!mydb.getStationId().equals(""))
+        {
+            mydb.deleteStation(mydb.getStationId());
+            mydb.insertStation(data);
+        }else{
+            mydb.insertStation(data);
+        }
+
+
+        return nav.cusDash();
     }
 
 

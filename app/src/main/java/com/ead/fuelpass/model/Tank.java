@@ -30,6 +30,13 @@ public class Tank {
         this.shed = shed;
     }
 
+    public Tank(String tankId, String fuelType, boolean status, String shed) {
+        this.tankId = tankId;
+        this.fuelType = fuelType;
+        this.status = status;
+        this.shed = shed;
+    }
+
     public String getTankId() {
         return tankId;
     }

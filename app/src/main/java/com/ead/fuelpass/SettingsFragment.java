@@ -70,10 +70,8 @@ public class SettingsFragment extends Fragment {
     //log out
     public void logOut()
     {
-        if(mydb.getTankId()!=null)
-        {
-            mydb.deleteTank(mydb.getTankId());
-        }
+
+        mydb.deleteQueue();
         if(mydb.deleteUser(mydb.getId()) !=null){
             startActivity(nav.login());
         }

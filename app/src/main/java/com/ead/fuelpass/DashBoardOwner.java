@@ -79,7 +79,7 @@ public class DashBoardOwner extends AppCompatActivity {
 
                     for(TankData d:response.body())
                     {
-                        t.add(new Tank(d.getFuelType(),d.isStatus(),d.getShed().getShedId()));
+                        t.add(new Tank(d.getTankId(),d.getFuelType(),d.isStatus(),d.getShed().getShedId()));
                     }
 
 

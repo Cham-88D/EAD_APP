@@ -114,17 +114,8 @@ public class Navigation {
 
 
     //customer dashboard nav
-    public Intent cusDash(String data) {
+    public Intent cusDash() {
         Intent intent = new Intent(context, DashBoardCustomer.class);
-        intent.putExtra("data", data);
-        if(!mydb.getStationId().equals(""))
-        {
-            mydb.deleteStation(mydb.getStationId());
-            mydb.insertStation(data);
-        }else{
-            mydb.insertStation(data);
-        }
-
         return intent;
     }
 

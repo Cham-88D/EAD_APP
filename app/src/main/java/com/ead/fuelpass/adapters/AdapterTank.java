@@ -1,6 +1,7 @@
 package com.ead.fuelpass.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,8 +70,7 @@ public class AdapterTank extends RecyclerView.Adapter<AdapterTank.ViewHolder>  {
             holder.btn.setText("Available");
             tankList.get(position).setStatus(true);
         }
-        holder.btn.setOnClickListener(v ->update(tankList.get(position),holder));
-
+        holder.btn.setOnClickListener(v ->update(tankList.get(position)));
 
     }
 
@@ -97,10 +97,9 @@ public class AdapterTank extends RecyclerView.Adapter<AdapterTank.ViewHolder>  {
 
 
     //update api call
-    public void update(Tank t,ViewHolder h)
+    public void update(Tank t)
     {
         Call<ResponseBody> call = tankService.stat(t);
-
         call.enqueue(new Callback<ResponseBody>() {
 
             @Override
@@ -112,7 +111,9 @@ public class AdapterTank extends RecyclerView.Adapter<AdapterTank.ViewHolder>  {
 
                 if (response.isSuccessful() && response.body() != null) {
                     Toasts.success(context, "updated");
-                    h.itemView.getContext().startActivity(nav.ownDashS());
+                    Intent myIntent = nav.ownDashS();
+                    myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(myIntent);
                 }
             }
 
