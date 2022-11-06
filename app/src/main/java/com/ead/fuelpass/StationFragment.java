@@ -163,7 +163,7 @@ public class StationFragment extends Fragment {
     public void queueData(TankData d) {
 
 
-        Call<QueueCount> call = serviceQ.queueCount(new Queue("id",d.getTankId(), mydb.getId(), "joined"));
+        Call<QueueCount> call = serviceQ.queueCount(new Queue("d",d.getTankId(), mydb.getId(), "joined"));
         call.enqueue(new Callback<QueueCount>() {
             @Override
             public void onResponse(Call<QueueCount> call, Response<QueueCount> response) {

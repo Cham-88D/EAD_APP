@@ -48,4 +48,5 @@
     <string name="back">Back</string>
     <string name="join">Join</string>
     <string name="count">Count</string>
+    <string name="time">Time</string>
 </resources>

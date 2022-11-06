@@ -68,6 +68,7 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
        holder.typeTxt.setText(queryList.get(position).getType());
        holder.statusTxt.setText(queryList.get(position).getStatus());
        holder.countTxt.setText(String.valueOf(queryList.get(position).getCount()));
+        holder.timeTxt.setText(queryList.get(position).getTime());
 
         if(!queryList.get(position).getStatus().equals("Available"))
         {
@@ -106,6 +107,7 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
         TextView  typeTxt;
         TextView statusTxt;
         TextView countTxt;
+        TextView timeTxt;
         Button btn;
         Button btn2;
 
@@ -115,6 +117,7 @@ AdapterQueue extends RecyclerView.Adapter<AdapterQueue.ViewHolder>{
             typeTxt = itemView.findViewById(R.id.fuelTypeC);
             statusTxt = itemView.findViewById(R.id.statusC);
             countTxt = itemView.findViewById(R.id.countC);
+            timeTxt = itemView.findViewById(R.id.timeC);
             btn = itemView.findViewById(R.id.changeC);
             btn2 = itemView.findViewById(R.id.changeC2);
         }

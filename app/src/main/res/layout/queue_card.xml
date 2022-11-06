@@ -15,14 +15,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="112dp">
 
         <TextView
             android:id="@+id/fuelTypeC"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="73dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="117dp"
             android:text="@string/fuel_type"
             android:textColor="#000000"
@@ -35,7 +35,7 @@
             android:id="@+id/statusC"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:text="@string/status"
             android:textColor="#000000"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="73dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="117dp"
             android:text="@string/count"
             android:textColor="#000000"
@@ -56,6 +56,20 @@
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/fuelTypeC" />
+
+        <TextView
+            android:id="@+id/timeC"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="117dp"
+            android:text="@string/time"
+            android:textColor="#000000"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/countC" />
 
         <Button
             android:id="@+id/changeC"
@@ -84,7 +98,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="259dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/round_bg"
             android:contentDescription="@string/change"
             android:elevation="2dp"
