@@ -18,9 +18,9 @@ public class Constants {
     public static final String STATION_ID = "station_id";
     public static final String TANK_ID = "tank_id";
     public static final String QUEUE_ID = "queue_id";
-    public static final String API = "";
-    public static final String URL = "";
-    public static final String URL2 = "";
+    public static final String API = "AAPK7e758596abc64309830a92a8b5d6d101h9MCDo-_mAjMXhXBM3zUJiy3y3S61KPymq6rZPia7w0Xl62YUt7TWfghmBhsRFAg";
+    public static final String URL = "https://fuelbackendead.herokuapp.com/api/v1/";
+
 
     public static final String USER_TABLE_CREATE = " CREATE TABLE " + USER_TABLE_NAME + "(" +
             USER_COLUMN_ID + " TEXT PRIMARY KEY," +
